@@ -86,3 +86,23 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+// Calculate and print the total of entries
+
+var entries = (finances.length);
+console.log("Total months: " + entries);
+
+// Calculate and print the total of $
+
+var sum = 0;
+for (var i = 0; i < finances.length; i++) {
+  sum += (finances[i][1]);
+} 
+
+console.log("Total: $" + sum);
+
+//Calculate and print the average change between entries
+
+
+
