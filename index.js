@@ -87,6 +87,11 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+var averagechange = 0;
+var greatestincrease = 0;
+var greatestdecrease = 0;
+var changesum = 0;
+
 
 // Calculate and print the total of entries
 
@@ -102,7 +107,43 @@ for (var i = 0; i < finances.length; i++) {
 
 console.log("Total: $" + sum);
 
-//Calculate and print the average change between entries
+// Calculate and print the average change between entries
+
+for (var i = 1; i < finances.length; i++) {
+  var currentmonth = finances[i][1];
+  var previousmonth = finances[i-1][1];
+  var monthchange = currentmonth - previousmonth;
+  changesum += monthchange++;
+  
+}
+
+averagechange = changesum / (finances.length -1);
+averagechange = averagechange.toFixed(2);
+
+
+console.log("Average Change: " + averagechange)
+
+// Calculate and print the greatest MoM increase in profits
+
+for (var i = 1; i < finances.length; i++) {
+  var currentmonth = finances[i][1];
+  var previousmonth = finances[i-1][1]
+  var increase = currentmonth - previousmonth;
+  if (increase > greatestincrease) {
+    greatestincrease = increase
+    increasemonth = i;
+  }
+}
+
+console.log("Greatest increase in Profits: " + greatestincrease)
+
+// Calculate and print the greatest MoM increase in losses
+
+
+
+
+
+console.log("Greatest increase in Losses: " + greatestdecrease)
 
 
 
