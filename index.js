@@ -131,17 +131,21 @@ for (var i = 1; i < finances.length; i++) {
   var increase = currentmonth - previousmonth;
   if (increase > greatestincrease) {
     greatestincrease = increase
-    increasemonth = i;
-  }
+    }
 }
 
 console.log("Greatest increase in Profits: " + greatestincrease)
 
 // Calculate and print the greatest MoM increase in losses
 
-
-
-
+for (var i = 1; i < finances.length; i++) {
+  var currentmonth = finances[i][1];
+  var previousmonth = finances[i-1][1]
+  var decrease = previousmonth - currentmonth;
+  if (decrease > greatestdecrease) {
+    greatestdecrease = decrease
+  }
+}
 
 console.log("Greatest increase in Losses: " + greatestdecrease)
 
